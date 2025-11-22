@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo "executing make"
+cmake .
+make
+
+echo "running program"
+./out
+
