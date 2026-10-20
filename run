@@ -1,9 +1,9 @@
 #!/bin/bash
 
-echo "executing make"
-cmake .
-make
+cd "$(dirname "$0")" || exit 1
 
-echo "running program"
-./out
+cmake -S . -B build
+cmake --build build -j2 || exit 1
+
+exec ./build/out
 
